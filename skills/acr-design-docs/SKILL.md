@@ -1,6 +1,6 @@
 ---
 name: acr-design-docs
-description: 写概要设计、架构设计、详细设计文档，以及根目录 README 的用户侧说明。要落设计文档、修订设计文档、整理文档结构或调整 README 时使用。含三层模板、层级边界、结构秩序与合格线。不属于我：需求文档走 acr-spec，存量项目文档重整走 acr-retrofit，实施与验证走 acr-cycle。
+description: 写概要设计、架构设计、详细设计文档，以及根目录 README 的用户侧说明。要落设计文档、修订设计文档、整理文档结构或调整 README 时使用。含三层模板、层级边界、结构秩序与合格线。不属于我：新项目初始化走 acr-init，需求文档走 acr-spec，存量项目文档重整走 acr-retrofit，实施与验证走 acr-cycle。
 ---
 
 # 设计文档

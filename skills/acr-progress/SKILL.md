@@ -1,6 +1,6 @@
 ---
 name: acr-progress
-description: 维护开发进度文档 PROGRESS.md。建新循环、登记功能点状态、记偏离与阻塞、收尾循环时使用。以「循环」为单位（一组关联 spec 走一次完整流程），不是每个 spec 单独一循环。不属于我：需求文档走 acr-spec，设计文档走 acr-design-docs，流程本身走 acr-cycle。
+description: 维护开发进度文档 PROGRESS.md。建新循环、登记功能点状态、记偏离与阻塞、收尾循环时使用。以「循环」为单位（一组关联 spec 走一次完整流程），不是每个 spec 单独一循环。不属于我：新项目初始化走 acr-init，需求文档走 acr-spec，设计文档走 acr-design-docs，流程本身走 acr-cycle。
 ---
 
 # 开发进度

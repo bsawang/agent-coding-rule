@@ -130,4 +130,4 @@ description: 开发流程主干：判定改动档位，走设计评审 → 进�
 - 不修 bug 之外的东西（诊断见 [reference/diagnosing.md](reference/diagnosing.md)）。
 - 不写需求与设计文档（→ `acr-spec` / `acr-design-docs`）。
 - 快道改动不进本流程（→ 直接记 `acr-spec` 第 9 节的调整日志）。
-- **从零脚手架新项目**走全局 `create-project`；本流程管既有项目的改造与新增。
+- **从零脚手架新项目**走 `acr-init`；本流程管既有项目的改造与新增。

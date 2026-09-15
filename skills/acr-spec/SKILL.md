@@ -1,6 +1,6 @@
 ---
 name: acr-spec
-description: 写需求文档。需求讨论到可以落文档、或要新增/修改需求文档时使用。按固定结构与合格线产出 docs/specs/<domain>/<slug>.spec.md，含功能点编号与可判的验收标准。快道改动的调整日志也挂在这里。不属于我：概要/架构/详细设计走 acr-design-docs，开发进度走 acr-progress，实施与验证走 acr-cycle。
+description: 写需求文档。需求讨论到可以落文档、或要新增/修改需求文档时使用。按固定结构与合格线产出 docs/specs/<domain>/<slug>.spec.md，含功能点编号与可判的验收标准。快道改动的调整日志也挂在这里。不属于我：新项目初始化走 acr-init，概要/架构/详细设计走 acr-design-docs，开发进度走 acr-progress，实施与验证走 acr-cycle。
 ---
 
 # 需求文档

@@ -20,14 +20,9 @@
 
 ## 安装
 
-技能源在本仓 `skills/`，装到全局 `~/.claude/skills/acr-*/`，全局生效（规约不分项目）：
+技能源在本仓 `skills/`，装到各 agent 的全局 skills 目录，全局生效（规约不分项目）。
 
-```bash
-bash install.sh            # 安装 / 更新（仓库 → 全局）
-bash install.sh --check    # 只比对，查全局与仓库是否漂移
-```
-
-装上后按场景自动触发，也可以直接点名调用。
+详见 [`INSTALL.md`](INSTALL.md) —— 三层注入规约、skills 同步、各 agent 配置方式都在里面。
 
 ## 文档
 

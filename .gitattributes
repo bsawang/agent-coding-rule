@@ -1,3 +1,2 @@
-# 仓库内一律 LF：Windows 上 core.autocrlf 默认 true，会把检出内容变成 CRLF，
-# 导致 install.sh 这类 shell 脚本报 `$'\r': command not found`。
+# 仓库内一律 LF：跨平台协作好习惯，避免 Windows CRLF 引起的 diff 噪音。
 * text=auto eol=lf

@@ -12,6 +12,19 @@ description: 新项目初始化：固化开发规范、生成项目骨架。首�
 
 acr 体系的入口。其他 acr-* skill 管的是**已经有项目**后的流程（写 spec / 写设计 / 开发循环 / 存量重整），本 skill 管的是**还没有规范**的时候——把流程骨架注入项目，让后续开发开箱即走 acr。
 
+## 与 create-project 的分工
+
+`create-project` 是 mattpocock 时代的"应该有但未落地"的全局 skill 占位（从未有过实际文件）。acr-init 是 acr 体系内正式取代那个空位的 skill。两者职责根本不同：
+
+| 维度 | acr-init | create-project（如存在） |
+|---|---|---|
+| **目的** | 给空仓注入开发规范 | 创建项目代码骨架（目录/依赖/脚手架） |
+| **产物** | 规则文件 + CLAUDE.md + docs/ 骨架 | package.json / pyproject.toml / src/ 目录 |
+| **管什么** | 流程约束 + 文档结构 | 代码技术栈 + 构建配置 |
+| **谁管** | acr 体系唯一入口 | 各技术栈各有（npm create / cargo init / ...） |
+
+**一句话**：acr-init 管的是"你在这个仓里应该怎么干活"，create-project 管的是"这个仓用什么技术搭起来"。两者互补不重叠——先 create-project（或手动 git init）建代码骨架，再 acr-init 注入规范。
+
 ## 三份产物
 
 ### 1. 项目级规则文件

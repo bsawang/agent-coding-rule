@@ -105,8 +105,8 @@ acr 体系的入口。其他 acr-* skill 管的是**已经有项目**后的流�
 | 文件 | 落点 | 初始内容 | 归属 skill |
 |---|---|---|---|
 | `docs/PROGRESS.md` | docs/ | `# {项目名} 开发进度`（空标题，cycle 第一次收点后由 progress 填充） | acr-progress |
-| `docs/prd.md` | docs/ | 标题 + `> 技术规格 → [spec.md](./spec.md)` | acr-brainstorm |
-| `docs/spec.md` | docs/ | 标题 + `> 业务层 → [prd.md](./prd.md)` | acr-spec |
+| `docs/prd.md` | docs/ | 标题 + `> 技术设计见 [spec.md](./spec.md)` | acr-brainstorm |
+| `docs/spec.md` | docs/ | 标题 + `> 业务需求见 [prd.md](./prd.md)` | acr-spec |
 
 ## 执行步骤
 

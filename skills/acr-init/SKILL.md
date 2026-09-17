@@ -89,10 +89,9 @@ acr 体系的入口。其他 acr-* skill 管的是**已经有项目**后的流�
 ## 文档地图
 - 业务需求: docs/prd.md （acr-brainstorm 产出；模块 Mx · 功能描述 · 非目标 · 状态后缀）
 - 技术规格: docs/spec.md （acr-spec 产出；Mx.y · 需求树 · 验收 · 详细设计 · 状态后缀）
-- 开发进度: PROGRESS.md （acr-progress 维护；单一真相源，项目根）
+- 开发进度: docs/PROGRESS.md （acr-progress 维护；单一真相源）
 
-**PROGRESS.md 在项目根**，docs/ 只有 prd.md 和 spec.md。
-根 README = 用户/部署侧说明; 开发侧一律放 docs/。
+**三份全在 docs/**。根 README = 用户/部署侧说明; 开发侧一律放 docs/。
 
 ## 流程遵循
 
@@ -105,13 +104,13 @@ acr 体系的入口。其他 acr-* skill 管的是**已经有项目**后的流�
 
 | 文件 | 落点 | 初始内容 | 归属 skill |
 |---|---|---|---|
-| `PROGRESS.md` | **项目根** | `# {项目名} 开发进度`（空标题，cycle 第一次收点后由 progress 填充） | acr-progress |
+| `docs/PROGRESS.md` | docs/ | `# {项目名} 开发进度`（空标题，cycle 第一次收点后由 progress 填充） | acr-progress |
 | `docs/prd.md` | docs/ | 标题 + `> 技术规格 → [spec.md](./spec.md)` | acr-brainstorm |
 | `docs/spec.md` | docs/ | 标题 + `> 业务层 → [prd.md](./prd.md)` | acr-spec |
 
-**就这三个**。不生成 api-contract.md / ARCHITECTURE.md / hld.md / lld.md / 踩坑备忘等——那些要么是技术栈自动产物，要么是运行时才有的内容，要么是 acr 流程外的东西。
+**就这三个，全在 docs/**。不生成 api-contract.md / ARCHITECTURE.md / hld.md / lld.md / 踩坑备忘等——那些要么是技术栈自动产物，要么是运行时才有的内容，要么是 acr 流程外的东西。
 
-**PROGRESS.md 要不要进版本库？** 进。它是单一真相源，和 prd/spec 一样随项目演进。
+**要不要进版本库？** 进。三份都是单一真相源，随项目演进。
 
 ## 执行步骤
 

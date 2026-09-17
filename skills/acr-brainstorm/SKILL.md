@@ -54,7 +54,7 @@ description: "头脑风暴 + prd 收敛。用户说'加个 X 功能' / 需求模
 ### 收敛规则
 
 - 模块 Mx 的切分粒度：一个模块 = 一个**业务价值单元**（用户视角能单独感知的功能域）
-- Mx 编号首次分配后**永不重排**，废弃标题加 🗑
+- Mx 编号首次分配后**永不重排**，废弃标题加 🗑 —— 完整编号规范见 [acr-spec/reference/numbering.md](../acr-spec/reference/numbering.md)
 - 增量修订时，只改 Mx 的功能描述，不动已有 Mx 的编号
 - **状态后缀生命周期**：prd 写完时所有 Mx = ⬜（未开始）。🟢⏳ 是 progress 在 cycle 执行中回写的镜像标记——prd 是被回写方，不是初始写方。单一真相源在 PROGRESS.md
 

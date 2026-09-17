@@ -108,10 +108,6 @@ acr 体系的入口。其他 acr-* skill 管的是**已经有项目**后的流�
 | `docs/prd.md` | docs/ | 标题 + `> 技术规格 → [spec.md](./spec.md)` | acr-brainstorm |
 | `docs/spec.md` | docs/ | 标题 + `> 业务层 → [prd.md](./prd.md)` | acr-spec |
 
-**就这三个，全在 docs/**。不生成 api-contract.md / ARCHITECTURE.md / hld.md / lld.md / 踩坑备忘等——那些要么是技术栈自动产物，要么是运行时才有的内容，要么是 acr 流程外的东西。
-
-**要不要进版本库？** 进。三份都是单一真相源，随项目演进。
-
 ## 执行步骤
 
 1. 读取项目名（目录名）

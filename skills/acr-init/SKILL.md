@@ -70,22 +70,7 @@ acr 体系的入口。其他 acr-* skill 管的是**已经有项目**后的流�
 
 存量项目审计/整改 → acr-plan(审计模式)
 有代码无文档重建 → acr-plan(rebuild 模式)
-
-## 项目特定 (acr-init 时填写，从代码推断 + 问用户确认)
-
-### 技术栈          Python 3.12 / FastAPI 0.115 / SQLite 3 / httpx 0.27
-### 架构约定        app/main.py 入口（薄壳）；app/core.py 业务逻辑（单入口）；app/db.py 数据层
-### 常用命令        开发: uvicorn app.main:app --reload --port 8000 ; 测试: pytest tests/ -v
-### 文档地图        docs/prd.md（业务层）· docs/spec.md（技术层）· PROGRESS.md（进度，项目根）
 ```
-
-**填写规则**：
-- **技术栈**：精确到版本号（和 spec §3.1 写死版本的约束对齐）。多栈用 `/` 分隔，测试框架单独列出
-- **架构约定**：一句话描述模块边界（如"core 单点 + cli 薄壳"），具体边界约定在 spec §3.2 详细写
-- **常用命令**：开发启动 + 测试 + 构建（如果有），多命令用 `;` 分隔
-- **文档地图**：acr 三份固定文档，加上项目可能有的其他文档（如 API.md 指技术栈自动产物）
-
-**推断来源**：package.json / pyproject.toml / Cargo.toml / go.mod / requirements.txt 等 → 自动提取依赖和版本。命令从 Makefile / scripts/ / docker-compose.yml 推断。推断不出来 → 问用户。
 
 **注意**：本文件只放**项目内必须看到的拦截线摘要**，完整定义以对应 skill 为真相源。
 
@@ -130,12 +115,10 @@ acr 体系的入口。其他 acr-* skill 管的是**已经有项目**后的流�
 
 ## 执行步骤
 
-1. 读取项目名与技术栈（目录名 + package.json/pyproject.toml 推断）
-2. 填入「项目特定」章节
-3. 按当前 agent 的注入机制写入规则文件（CC → `.claude/CLAUDE.md`）
-4. 写入指引文件 + docs/ 骨架
-5. 提示用户补全「项目特定」占位（`<!-- -->` 标记的项）
-6. **自检**：把规则文件里的 skill 路由 / 档位描述，与 flow.md + glossary.md 对一遍
+1. 读取项目名（目录名）
+2. 按当前 agent 的注入机制写入规则文件（CC → `.claude/CLAUDE.md`）
+3. 写入指引文件 + 文档骨架
+4. **自检**：把规则文件里的 skill 路由 / 档位描述，与 flow.md + glossary.md 对一遍
 
 ## 边界
 

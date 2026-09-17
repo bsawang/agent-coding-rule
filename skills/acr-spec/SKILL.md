@@ -37,9 +37,11 @@ M2 本地端消费
 
 ## 三步
 
-1. **分流讨论记录** —— 原始讨论、零散笔记、聊天里的结论，全部进 `docs/discussion.md`。这是**倾倒口**：讨论可以详尽、可以乱。
-2. **写 spec** —— 只放**结论**，按 [reference/spec-template.md](reference/spec-template.md) 的结构。
-3. **过合格线** —— 自查题印在模板末尾，逐条过。
+1. **写 spec** —— 按 [reference/spec-template.md](reference/spec-template.md) 的结构，只放**结论**。
+2. **过合格线** —— 自查题印在模板末尾，逐条过。
+3. **自检** —— 确保 prd 和 spec 的 Mx 模块列表一致（grep diff）。
+
+原始讨论、零散笔记、聊天结论留在会话里或项目特定的笔记里，**不进 acr 文档**。acr 文档只放结论。
 
 ## 三层设计合在 spec 里
 

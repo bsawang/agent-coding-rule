@@ -45,20 +45,28 @@ acr 体系的入口。其他 acr-* skill 管的是**已经有项目**后的流�
 ## 硬规矩
 
 - plan 事实预检查不过,不许下发 progress
-- design 未经用户确认,改实现代码一律拦下
+- 设计未经用户确认,改实现代码一律拦下
 - 没在本轮对话里跑过验证命令,不许声称通过/修好/完成
 - 一次一个子需求,不攒到最后一起验证
 - 实现偏离设计时只有两个出口:改文档 or 改代码,不许"先这样吧"
 - 快道中发现上层文档要改,就地升级档位,不硬推
 
+## 对账点（agent 不许跳过）
+
+| 位置 | 做什么 |
+|---|---|
+| plan 事实预检查 | spec 详细设计 ↔ 代码现状（已有实现 / 技术底座 / 大漂移） |
+| cycle 收点 F1 | ✅ 必须有本轮新鲜证据（命令 + 原始输出在本轮对话里） |
+| progress 收尾 F2+F3 | spec 验收 ↔ progress 证据 ↔ 代码测试 三方 diff；代码结构 ↔ spec 详细设计 |
+
 ## Skill 触发提示
 
 开发流程走 acr-*:
-- 发散方案 → acr-brainstorm
+- 发散 + prd → acr-brainstorm
 - 技术规格 → acr-spec
-- 评估 + 下发 + 对账 → acr-plan
-- 进度 + 状态 + 同步 → acr-progress
-- 执行 → acr-cycle
+- 档位判定 + 事实预检查 + 下发 → acr-plan
+- 计划侧对账 + F2+F3 + 状态 + 游标 + 回写栏 → acr-progress
+- 执行 + F1 收点 → acr-cycle
 
 存量项目审计/整改 → acr-plan(审计模式)
 有代码无文档重建 → acr-plan(rebuild 模式)
@@ -86,12 +94,11 @@ acr 体系的入口。其他 acr-* skill 管的是**已经有项目**后的流�
 - 前端构建: <构建命令>
 
 ## 文档地图
-- 业务需求: docs/prd.md （acr-brainstorm 产出）
-- 技术规格: docs/spec.md （acr-spec 产出；模块 Mx · 子需求 Mx.y · 需求树 · 验收 · 详细设计）
-- 开发进度: PROGRESS.md （acr-progress 维护；单一真相源）
-- 接口契约: docs/api-contract.md
-- 踩坑/备忘: docs/README.md
+- 业务需求: docs/prd.md （acr-brainstorm 产出；模块 Mx · 功能描述 · 非目标 · 状态后缀）
+- 技术规格: docs/spec.md （acr-spec 产出；Mx.y · 需求树 · 验收 · 详细设计 · 状态后缀）
+- 开发进度: PROGRESS.md （acr-progress 维护；单一真相源，项目根）
 
+**PROGRESS.md 在项目根**，docs/ 只有 prd.md 和 spec.md。
 根 README = 用户/部署侧说明; 开发侧一律放 docs/。
 
 ## 流程遵循
@@ -99,18 +106,19 @@ acr 体系的入口。其他 acr-* skill 管的是**已经有项目**后的流�
 本仓遵循 acr (Agent Coding Rules) 流程方法论。skill 清单见全局。
 ```
 
-### 3. docs/ 骨架
+### 3. 文档骨架
 
-生成以下文件，**只写占位和归属**，其余为空模板。**模板一律以归属 skill 为准**。
+只生成 acr 流程必需的三个文件，**只写标题 + 双向关联指向**，其余为空。**模板以归属 skill 为准**。
 
-| 文件 | 内容 | 归属 skill（真相源） |
-|---|---|---|
-| `docs/prd.md` | 业务层：项目定位 + 模块 Mx + 功能描述 + 非目标 | acr-brainstorm |
-| `docs/spec.md` | 技术层：模块 Mx + 子需求 Mx.y + 需求树 + 验收 + 详细设计 | acr-spec |
-| `docs/api-contract.md` | 契约版本表 + 端点预留 | 项目特定 |
-| `docs/README.md` | 测试现状 / 踩坑 / 部署备忘 | 项目特定 |
+| 文件 | 落点 | 初始内容 | 归属 skill |
+|---|---|---|---|
+| `PROGRESS.md` | **项目根** | `# {项目名} 开发进度`（空标题，cycle 第一次收点后由 progress 填充） | acr-progress |
+| `docs/prd.md` | docs/ | 标题 + `> 技术规格 → [spec.md](./spec.md)` | acr-brainstorm |
+| `docs/spec.md` | docs/ | 标题 + `> 业务层 → [prd.md](./prd.md)` | acr-spec |
 
-**注意**：架构内容已合入 spec.md §3（完整档才写）。没有独立的 ARCHITECTURE.md / hld.md / lld.md。
+**就这三个**。不生成 api-contract.md / ARCHITECTURE.md / hld.md / lld.md / 踩坑备忘等——那些要么是技术栈自动产物，要么是运行时才有的内容，要么是 acr 流程外的东西。
+
+**PROGRESS.md 要不要进版本库？** 进。它是单一真相源，和 prd/spec 一样随项目演进。
 
 ## 执行步骤
 

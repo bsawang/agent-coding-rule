@@ -14,7 +14,7 @@
 
 先问：公开接口是什么？要测哪几个 seam？
 
-接口形状本身存疑时（模块该多深、seam 该放哪、接口该暴露什么），查 `acr-design-docs` 的 [design-vocab.md](../../acr-design-docs/reference/design-vocab.md)。
+接口形状本身存疑时（模块该多深、seam 该放哪、接口该暴露什么），查 `acr-spec` SKILL.md 里的「设计词汇」节。
 
 ## 三个反模式
 

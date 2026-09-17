@@ -1,6 +1,6 @@
 ---
 name: acr-spec
-description: 写技术规格文档。spec 按模块 Mx 和子需求 Mx.y 编号，功能需求自带需求树和详细设计，架构设计按档位决定写多少。不属于我：新项目初始化走 acr-init，prd 产出走 acr-brainstorm，评估+下发走 acr-plan，进度维护走 acr-progress，实施走 acr-cycle。
+description: "写技术规格。prd.md 已审过 / 用户说'写 spec' / 要把 prd 变成可实现的技术方案时必须调我。产出 spec.md：Mx.y 编号 + 需求树 + 验收标准 + 详细设计（完整档写架构）。不是我：业务需求走 acr-brainstorm，档位判定走 acr-plan。"
 ---
 
 # 技术规格文档

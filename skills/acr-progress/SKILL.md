@@ -1,6 +1,6 @@
 ---
 name: acr-progress
-description: 实施层单一真相源。plan 产出初始态后由本 skill 接收对账，cycle 执行中实时写状态/游标/证据/需求回写，cycle 收尾时由本 skill 做 F2+F3 对账 + 同步回 prd/spec + 归档。不属于我：档位判定走 acr-plan，技术规格走 acr-spec，执行走 acr-cycle。
+description: "实施层单一真相源。plan 已下发 / cycle 执行完要对账 / 要维护 PROGRESS.md 状态时必须调我。接收 plan 初始态做计划侧对账、cycle 执行中实时写游标/证据/需求回写、cycle 收尾做 F2+F3 三方 diff + 同步回 prd/spec。不是我：档位判定走 acr-plan，技术规格走 acr-spec，执行走 acr-cycle。"
 ---
 
 # 实施层进度

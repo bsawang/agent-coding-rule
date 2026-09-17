@@ -1,6 +1,6 @@
 ---
 name: acr-plan
-description: 跨层规划与对账。档位判定（内置）+ 影响评估 + 事实预检查 + 下发范围。三种模式：正常（嵌在 brainstorm→spec→plan→progress→cycle 流程里）、审计（直接调用出 diff）、rebuild（有代码无文档反推）。不属于我：发散走 acr-brainstorm，技术规格走 acr-spec，进度维护走 acr-progress，执行走 acr-cycle。
+description: "档位判定 + 事实预检查 + 下发。spec.md 已审过 / 用户说'做计划' / 存量项目要审计 / 有代码无文档要 rebuild 时必须调我。内置三档判定（快道/标准档/完整档）+ 审计模式 + rebuild 模式。不是我：写 spec 走 acr-spec，执行走 acr-cycle。"
 ---
 
 # 规划与对账

@@ -21,7 +21,7 @@ description: "写技术规格。prd.md 已审过 / 用户说'写 spec' / 要把 
 ## 三步
 
 1. **写 spec** —— 按 [reference/spec-template.md](reference/spec-template.md) 的结构，只放**结论**。
-2. **过合格线** —— 自查题印在模板末尾，逐条过。
+2. **过合格线** —— 自查题印在模板末尾，逐条过。更完整的 spec 阶段质检见 [acr-progress/reference/quality-checklist.md](../acr-progress/reference/quality-checklist.md) §2。
 3. **MX 集合对账（两步，必须都过）** ——
    - ① **模块级**：prd 的 `### Mx` 列表 = spec 的 `### Mx` 列表（grep diff，集合相等）
    - ② **子需求级**：spec 的每个 `#### Mx.y`，其 Mx 必须在 prd 定义过（防止 spec 偷偷加了 prd 没说过的模块）

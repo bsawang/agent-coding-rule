@@ -47,7 +47,7 @@ description: "无状态执行。progress 接收初始态后 / PROGRESS.md 有 �
 
 ### 收点 = F1 事实对账
 
-progress 里写 ✅ 的**那一刻**，F1 触发：
+progress 里写 ✅ 的**那一刻**，F1 触发。cycle 收点的完整 checklist 见 [acr-progress/reference/quality-checklist.md](../acr-progress/reference/quality-checklist.md) §5：
 - 验收命令的**原始输出必须在本轮对话内**
 - 三天前跑的不算、引用不算、摘要不算
 - 没证据 → 不许写 ✅，重跑验证

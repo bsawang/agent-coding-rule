@@ -16,7 +16,7 @@ plan 产出初始态 → progress 接收 + 计划侧对账 → 过 → 交给 cy
 
 cycle 执行中：cycle 写游标 / 写证据 / 写需求回写 / 写状态 → 实时更新
 
-cycle 全部收点 → progress 收尾：
+cycle 全部收点 → progress 收尾（F2+F3 清单见 [reference/quality-checklist.md](reference/quality-checklist.md) §6）：
   ① F2 三方 diff（spec 验收 ↔ progress 证据 ↔ 代码测试）
   ② F3 代码↔设计（大漂移拦、小漂移记）
   ③ 同步回 prd/spec（先落回 → 再清空回写栏 → 最后标归档）
@@ -65,7 +65,7 @@ PROGRESS.md 必须**按循环分块**，每块 6 个要素。**模块级不单�
 
 ## 硬规矩
 
-- **plan 产出初始态后必须过计划侧对账**才能交给 cycle：
+- **plan 产出初始态后必须过计划侧对账**才能交给 cycle（对账清单见 [reference/quality-checklist.md](reference/quality-checklist.md) §4）：
   - spec 的 Mx 集合 = prd 的 Mx 集合（prd 只有模块级 Mx，没有 Mx.y）
   - spec 的 Mx.y 都属于 prd 定义的 Mx（spec 没偷偷加 prd 没覆盖的模块）
   - progress 本循环覆盖的 Mx.y ⊆ spec 全集

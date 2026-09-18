@@ -1,4 +1,4 @@
-﻿---
+---
 name: acr-cycle
 description: "无状态执行。progress 接收初始态后 / PROGRESS.md 有 ⏳ 游标待续做 / 用户说'开始写代码'时必须调我。逐 Mx.y 执行：读spec→TDD(RED必须真看红)→影响分析→收点F1。退出后回来从 ⏳ 续做。不是我：档位判定走 acr-plan，进度维护走 acr-progress，prd/spec 走 acr-brainstorm/acr-spec。"
 ---
@@ -25,7 +25,7 @@ description: "无状态执行。progress 接收初始态后 / PROGRESS.md 有 �
 
   ③ 影响分析（可选）—— 列出本改动可能影响的外部功能 + 可选测试计划（不真跑）
      例："改了 note.create slug 逻辑 → 可能影响 M2.1 标签筛选依赖 slug / 可选跑 pytest tests/test_tags.py"
-     → 追加到 PROGRESS.md 本子块末尾，不算 F1 证据，仅作参考
+     → 追加到 PROGRESS.md 本批次表本 Mx.y 的备注列末尾，不算 F1 证据，仅作参考
      → 没影响或懒得写 → 跳过，不卡 ✅
 
   ④ 收点 ✅ —— 贴证据（命令 + 输出 + 轮次）→ 原子标记完成 → 触发 F1
@@ -41,7 +41,7 @@ description: "无状态执行。progress 接收初始态后 / PROGRESS.md 有 �
 1. **写测试** —— 按 spec 验收标准写一条最小测试（垂直切片，一次一个 seam）
 2. **执行测试** —— 必须真跑一遍（`pytest -v tests/test_x.py::test_y` 或等价命令）
 3. **确认红** —— 测试输出必须显示 FAIL / ERROR / assertion failed，**不是 passing**
-4. **记录** —— 把**红的输出片段**（`FAILED tests/test_x.py::test_y - AssertionError...`）贴进 PROGRESS.md 本子块的 RED 行（F1 对账需要 RED 片段作为 TDD 合规证明）
+4. **记录** —— 把**红的输出片段**（`FAILED tests/test_x.py::test_y - AssertionError...`）贴进 PROGRESS.md 本批次表本 Mx.y 的 RED 列（F1 对账需要 RED 片段作为 TDD 合规证明）
 
 **违反即停**：如果测试一上来就是绿的（因为前一个子需求顺带实现了），不能静默跳过。必须：
 1. **显式声明** —— 说清为什么前一个子需求让它绿了
@@ -54,7 +54,7 @@ description: "无状态执行。progress 接收初始态后 / PROGRESS.md 有 �
 
 不是 F1 对账项，不强制。只是 cycle 跑完随手留的**参考笔记**——后续出问题时（CI 挂了、用户反馈异常），可以回到 PROGRESS.md 翻到这条子需求的影响分析，快速定位可能的原因，然后生成真的测试去跑。
 
-- **写在哪**：PROGRESS.md 本子块末尾（独立一段），自由文本，不算 F1 证据
+- **写在哪**：PROGRESS.md 本批次表本 Mx.y 的备注列末尾（追加），自由文本，不算 F1 证据
 - **写什么**：可能影响的外部功能 + 可选测试命令
 - **不写也能过**：没影响或懒得写 → 跳过，不卡 ✅
 
@@ -70,8 +70,8 @@ progress 里写 ✅ 的**那一刻**，F1 触发。cycle 收点的完整 checkli
 ## cycle 写 PROGRESS.md 什么
 
 cycle **只写两处**：
-1. F1 收点时在本子块写 RED/GREEN 行（命令 + 输出片段）
-2. 塌方时写需求回写栏
+1. F1 收点时在本批次表本 Mx.y 的 RED/GREEN 列写命令 + 输出片段
+2. 塌方时写备注列
 
 cycle **不碰状态列**（✅/⏳/⬜ 由 progress 根据 cycle 是否完成来写），也**不直接改 prd.md / spec.md**。详细规则见 progress SKILL.md。
 

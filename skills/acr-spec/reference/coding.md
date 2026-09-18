@@ -48,7 +48,7 @@ def test_code_generation():
 TDD 硬约束（cycle 第③步）：
 1. 先写测试（按 spec 验收条件）
 2. **真跑一遍确认红**（pytest 必须有 FAILED 输出）
-3. 贴红输出到 PROGRESS.md 本子块的 RED 行
+3. 贴红输出到 PROGRESS.md 本批次表本 Mx.y 的 RED 列
 4. 写最小实现 → 绿 → 自检验收全过
 
 **禁止**：测试一上来就是绿的（反向验证必须真看到红）；测试用代码自己算期望值（同义反复）。

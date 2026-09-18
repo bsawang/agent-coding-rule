@@ -1,4 +1,4 @@
-﻿# 质检清单
+# 质检清单
 
 **谁用**：progress 收尾时逐条过（F2+F3）；cycle 收点时过本子需求的 F1；spec 写完过 spec 阶段；plan 下发前过 plan 阶段。
 
@@ -54,7 +54,7 @@
 |---|---|---|---|
 | PR1 | 依赖图拓扑序无环 | progress SKILL.md 硬规矩 | 画依赖图，不能有 A→B→A |
 | PR2 | 每个本批次内的待定项有主有期 | progress SKILL.md 硬规矩 | spec §6 待定项"何时必须定"不空 |
-| PR3 | PROGRESS.md 结构正确 | progress SKILL.md 结构硬约束 | 按批次分块 + 6 要素 + 无模块级行 + 子需求表只有状态+证据两列 |
+| PR3 | PROGRESS.md 结构正确 | progress SKILL.md 结构硬约束 | 全览前置（索引+唯一真相源）+ 批次块线性追加 + 6 要素 + 子需求表只有状态+证据两列 |
 
 **全勾上才能交给 cycle。有一个不勾 → 回去改 plan 或 spec。**
 

@@ -35,15 +35,15 @@ description: "实施层单一真相源。plan 已下发 / cycle 执行完要对�
 |---|---|
 | 覆盖 | prd §M1 / spec §M1.1-M1.3 |
 | 依赖序 | M1.1 → M1.2 → M1.3 |
-| M1.1 ✅ 创建待办条目 | |
+| M1.1 ✅ | 创建待办条目 |
 | RED | `pytest tests/test_create.py -v` → ImportError: cannot import 'Todo' (2026-09-17) |
 | GREEN | `pytest tests/test_create.py -v` → 6 passed in 0.03s (2026-09-17) |
 | 备注 | — |
-| M1.2 ✅ 查询待办列表 | |
+| M1.2 ✅ | 查询待办列表 |
 | RED | `pytest tests/test_list.py -v` → 3 failed (2026-09-17) |
 | GREEN | `pytest tests/test_list.py -v` → 5 passed in 0.02s (2026-09-17) |
 | 备注 | 需支持 page/limit 分页参数（已同步 spec §M1.2） |
-| M1.3 ✅ 删除待办条目 | |
+| M1.3 ✅ | 删除待办条目 |
 | RED | —（共享模块已被 M1.1 的 RED 覆盖） |
 | GREEN | `pytest tests/test_delete.py -v` → 3 passed (2026-09-17) |
 | 备注 | — |
@@ -54,11 +54,11 @@ description: "实施层单一真相源。plan 已下发 / cycle 执行完要对�
 |---|---|
 | 覆盖 | prd §M2 / spec §M2.1-M2.2 |
 | 依赖序 | M2.1 → M2.2 |
-| M2.1 ⏳ 按分类过滤 | |
+| M2.1 ⏳ | 按分类过滤 |
 | RED | `pytest tests/test_filter_category.py -v` → 4 failed (2026-09-18) |
 | GREEN | 进行中… |
 | 备注 | 待定：分类枚举值范围待产品确认 |
-| M2.2 ⬜ 按完成状态筛选 | |
+| M2.2 ⬜ | 按完成状态筛选 |
 | RED | — |
 | GREEN | — |
 | 备注 | — |
@@ -71,8 +71,8 @@ description: "实施层单一真相源。plan 已下发 / cycle 执行完要对�
 | **全览是状态唯一真相源** | 批次状态（✅⏳⬜）和子需求状态（全览"子需求"列里的 Mx.y✅⏳⬜）由 progress 独占写入 |
 | **全览表是批次级索引** | 每行一个批次。子需求概要压缩在"子需求"列（`M1.1创建✅ M1.2查询✅`） |
 | **批次块 = 标题 + 一张 2 列表格** | 左列标签（覆盖/依赖序/Mx.y标题/RED/GREEN/备注），右列内容。内容竖向排，永远不撑宽 |
-| **2 列表格结构** | 表头空两行。前两行：覆盖 / 依赖序。然后每个 Mx.y 占一组：`Mx.y ✅ 概要`（左列，右列空）+ RED 行 + GREEN 行 + 备注行 |
-| **Mx.y 标题格式** | 左列 `M1.1 ✅ 创建待办条目` = 编号 + 状态 emoji + spec §4 子需求标题，空格分隔。progress 创建时一次性提取，cycle 不改 |
+| **2 列表格结构** | 表头空两行。前两行：覆盖 / 依赖序。然后每个 Mx.y 占一组：编号行（左列 `Mx.y ✅`，右列概要）+ RED 行 + GREEN 行 + 备注行（后三行左列标签、右列内容） |
+| **Mx.y 编号行** | 左列 `M1.1 ✅`（编号 + 状态 emoji），右列 = spec §4 子需求标题。progress 创建时一次性提取，cycle 不改 |
 | **批次块永不重排** | 归档只改标题状态后缀（`⏳` → `✅`），新批次直接 append 到末尾 |
 | **批次号暗示顺序** | 批次 N+1 一定在批次 N 之后 |
 | **⏳ 只在两处** | 全览批次状态列 + 全览子需求列里的 Mx.y + 当前进行中批次表的 Mx.y 标题行。已归档批次不许有 ⏳ |

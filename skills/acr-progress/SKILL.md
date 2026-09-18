@@ -9,67 +9,6 @@ description: "实施层单一真相源。plan 已下发 / cycle 执行完要对�
 
 **定位**：实施层**唯一真相源**。prd/spec 里的 🟢⬜ 是本文件状态的**镜像标记**，只有本 skill 能改 PROGRESS.md，也只有本 skill 能回写 prd/spec 的状态后缀。全局真相源体系（六层六源 + 禁止事项）见 `docs/SSOT.md`。
 
-## 实施流程（三个触发场景）
-
-### 触发 A：plan 交出下发声明 → 创建 PROGRESS.md
-
-```
-① 计划侧对账（清单见 [reference/quality-checklist.md](reference/quality-checklist.md) §4）：
-   PR1 依赖图拓扑序无环
-   PR2 每个本批次内待定项有主有期
-   PR3 PROGRESS.md 结构正确
-   （spec 三步已覆盖的 MX 集合/验收完整性不重复查）
-   → 全过才继续，有一个不过 → 退回 plan
-
-② 创建 PROGRESS.md：
-   - 读 spec §4，提取每个 Mx.y 的功能概要（子需求标题）
-   - 写全览表头 + 批次 1 行（状态 ⏳，子需求列压缩概要+状态）
-   - 写批次 1 块标题（⏳ 进行中）+ 覆盖/依赖序行 + 子需求表（所有行 ⬜，概要列已填）
-   → 交给 cycle
-```
-
-### 触发 B：cycle 执行中 → 接收证据/回写
-
-```
-cycle 收点 ✅ 时，progress 被动接收：
-   - 证据列：cycle 写 TDD RED + GREEN 输出
-   - 回写列：cycle 写发现的 spec/prd 偏差
-   - 待定列：cycle 写阻塞项
-progress 不主动干预 cycle 的执行节奏，只接收和记录
-```
-
-### 触发 C：批次内所有子需求收点 → 收尾归档
-
-```
-① F2 三方 diff（清单见 [reference/quality-checklist.md](reference/quality-checklist.md) §6）：
-   spec 验收标准 ↔ PROGRESS 证据列 ↔ pytest 输出
-   → 全对齐才继续，有差异 → 标到回写列
-
-② F3 代码↔设计：
-   grep 代码函数签名 vs spec 详细设计的接口签名
-   → 大漂移（函数名/参数变了）拦下来 → 回写 spec；小漂移记到快道日志
-
-③ 归档本批次：
-   - 批次标题：⏳ → ✅（已归档）
-   - 全览批次状态：⏳ → ✅
-   - 全览子需求列：所有 ⏳ → ✅
-
-④ 同步 prd/spec：
-   - prd §1 活跃 Mx 标题加 🟢（镜像）
-   - spec §4 活跃 Mx 标题加 🟢（镜像）
-   - 落回回写列内容到 prd/spec（如果有）
-   - prd §4 调整记录追加一行 / spec 调整记录追加一行
-   - 清空回写列 + 待定列
-
-⑤ 追加新批次（如果 plan 还有剩余 Mx.y）：
-   - 全览追加批次 N+1 行（状态 ⬜）
-   - 批次块 append 新块（标题 ⬜ + 覆盖/依赖序 + 子需求表）
-   → 交给 cycle 继续
-
-⑥ 全项目完成判定：
-   全览所有批次 = ✅ → prd/spec 所有 Mx = 🟢 → 完成
-```
-
 **plan 做档位判定 + 事实预检查，progress 做计划侧对账。不重复。**
 
 ## 结构（硬约束，不许偏离）

@@ -16,13 +16,16 @@ acr 的规矩分三层注入，按保证强度排序。**三层不重复，避�
 
 **L1 放拦截线，L2 放完整定义，L3 放项目特定。三层不重复，避免造第二真相源。**
 
-## 真相源
+## 真相源体系
 
-| 层 | 真相源位置 |
+详见 [skills/SSOT.md](skills/SSOT.md)——三层四源 + 谁能写谁只能读 + 禁止事项 + 镜像同步机制。
+
+| 层 | 真相源 |
 |---|---|
-| L2 skills | 本仓 `skills/` 目录——唯一，改了要同步到全局 |
-| L1 全局规则 | 各平台的全局规则文件（见下方平台配置） |
-| L3 项目级规则 | 各项目仓库内 |
+| 规范层 | 各 `skills/acr-*/SKILL.md` |
+| 编号层 | `skills/acr-spec/reference/numbering.md` |
+| 设计层 | `docs/prd.md` + `docs/spec.md` |
+| 实施层 | `docs/PROGRESS.md`（只有 progress skill 能写） |
 
 ## Bootstrap
 

@@ -1,5 +1,7 @@
 # 编号规范：模块 Mx + 子需求 Mx.y
 
+**SSOT 声明**：本文件是编号的**唯一真相源**。任何关于"编号怎么编、能不能改、废弃怎么处理、引用格式"的问题，都以这里为准。其他 skill（brainstorm / spec / progress / cycle / plan）只引用，不重复写编号规则。整体 SSOT 体系见 [SSOT.md](../../SSOT.md)。
+
 **归属**：acr-spec 的 reference，brainstorm 和 spec 都引用这里。
 
 ## 体系

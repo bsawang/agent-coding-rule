@@ -1,6 +1,6 @@
 # 编码规范
 
-**SSOT 声明**：本文件是**项目文档编码规范的唯一真相源**——编号、章节、状态后缀、引用格式、命名约定全在这。其他 skill 只引用，不重复写。整体 SSOT 体系见 [SSOT.md](../../SSOT.md)。
+**SSOT 声明**：本文件是**文档编码规范的唯一真相源**——编号、章节、状态后缀、引用格式、anchor 规则全在这。代码层编码规范（模块边界/错误处理/测试组织/TDD/依赖管理）见 [coding.md](coding.md)。整体 SSOT 体系见 [SSOT.md](../../SSOT.md)。
 
 ---
 
@@ -112,16 +112,4 @@ spec / prd 的顶级章节用 `§数字`，子章节不加编号：
 
 ---
 
-## 5. 项目代码层规范
-
-**SSOT**：代码层规范（目录结构 / 模块边界 / 命名约定 / 测试组织）的真相源是 **spec §3.2 架构概览**。init 不碰代码规范——那是 spec 写架构时自然要定义的。
-
-| 规范类型 | 在哪定义 | 举例 |
-|---|---|---|
-| 目录结构 | spec §3.2 | `src/cli.py` 薄壳 / `src/core.py` 业务 / `src/db.py` 数据层 |
-| 模块边界 | spec §3.2 | cli 不许 import db；core 不许 import click |
-| 命名约定 | spec §3.2 | Python 用 snake_case / 测试文件 `test_*.py` |
-| 测试组织 | spec 每个 Mx.y 的「测试要点」 | `tests/test_shorten.py::test_code_generation` |
-| 技术栈版本 | spec §3.1 | Python 3.12 / FastAPI 0.115 |
-
-**项目级规则文件里不重复这些**——只放拦截线摘要和文档地图，代码规范全在 spec 里。
+**代码层编码规范**（模块边界 / 错误处理 / 测试组织 / TDD / 依赖管理）见 [coding.md](coding.md)——本文件只管文档编码。

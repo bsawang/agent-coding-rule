@@ -38,15 +38,18 @@ description: "实施层单一真相源。plan 已下发 / cycle 执行完要对�
 | M1.1 ✅ | 创建待办条目 |
 | RED | `pytest tests/test_create.py -v` → ImportError: cannot import 'Todo' (2026-09-17) |
 | GREEN | `pytest tests/test_create.py -v` → 6 passed in 0.03s (2026-09-17) |
-| 备注 | — |
+| 回写 | — |
+| 待定 | — |
 | M1.2 ✅ | 查询待办列表 |
 | RED | `pytest tests/test_list.py -v` → 3 failed (2026-09-17) |
 | GREEN | `pytest tests/test_list.py -v` → 5 passed in 0.02s (2026-09-17) |
-| 备注 | 需支持 page/limit 分页参数（已同步 spec §M1.2） |
+| 回写 | 需支持 page/limit 分页参数（已同步 spec §M1.2） |
+| 待定 | — |
 | M1.3 ✅ | 删除待办条目 |
 | RED | —（共享模块已被 M1.1 的 RED 覆盖） |
 | GREEN | `pytest tests/test_delete.py -v` → 3 passed (2026-09-17) |
-| 备注 | — |
+| 回写 | — |
+| 待定 | — |
 
 ## 批次 2 ⏳（进行中）
 
@@ -57,11 +60,13 @@ description: "实施层单一真相源。plan 已下发 / cycle 执行完要对�
 | M2.1 ⏳ | 按分类过滤 |
 | RED | `pytest tests/test_filter_category.py -v` → 4 failed (2026-09-18) |
 | GREEN | 进行中… |
-| 备注 | 待定：分类枚举值范围待产品确认 |
+| 回写 | — |
+| 待定 | 分类枚举值范围待产品确认 |
 | M2.2 ⬜ | 按完成状态筛选 |
 | RED | — |
 | GREEN | — |
-| 备注 | — |
+| 回写 | — |
+| 待定 | — |
 ```
 
 ### 关键约束
@@ -75,7 +80,7 @@ description: "实施层单一真相源。plan 已下发 / cycle 执行完要对�
 | **批次号暗示顺序** | 批次 N+1 一定在批次 N 之后 |
 | **⏳ 只在进行中处** | 全览批次状态列 + 全览子需求列 + 当前进行中批次的子需求行。已归档批次不许有 ⏳ |
 | **RED/GREEN 必须带关键输出** | 不许只写"passed"，必须贴关键片段（`6 passed in 0.03s`）。F1 对账核心是"输出在本轮对话里" |
-| **cycle 要么 ✅ 要么塌方** | 中间断 = 塌方，写备注。不搞"内部步骤游标" |
+| **cycle 要么 ✅ 要么塌方** | 中间断 = 塌方，写回写行。不搞"内部步骤游标" |
 | **cycle 不碰状态列** | ✅⏳⬜ 由 progress 根据 cycle 是否完成来写 |
 
 ## 硬规矩

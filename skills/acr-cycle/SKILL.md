@@ -25,7 +25,7 @@ description: "无状态执行。progress 接收初始态后 / PROGRESS.md 有 �
 
   ③ 影响分析（可选）—— 列出本改动可能影响的外部功能 + 可选测试计划（不真跑）
      例："改了 note.create slug 逻辑 → 可能影响 M2.1 标签筛选依赖 slug / 可选跑 pytest tests/test_tags.py"
-     → 追加到 PROGRESS.md 本批次表本 Mx.y 的备注行末尾，不算 F1 证据，仅作参考
+     → 追加到 PROGRESS.md 本批次表本 Mx.y 的回写行末尾，不算 F1 证据，仅作参考
      → 没影响或懒得写 → 跳过，不卡 ✅
 
   ④ 收点 ✅ —— 贴证据（命令 + 输出 + 轮次）→ 原子标记完成 → 触发 F1
@@ -54,7 +54,7 @@ description: "无状态执行。progress 接收初始态后 / PROGRESS.md 有 �
 
 不是 F1 对账项，不强制。只是 cycle 跑完随手留的**参考笔记**——后续出问题时（CI 挂了、用户反馈异常），可以回到 PROGRESS.md 翻到这条子需求的影响分析，快速定位可能的原因，然后生成真的测试去跑。
 
-- **写在哪**：PROGRESS.md 本批次表本 Mx.y 组的备注行末尾（追加），自由文本，不算 F1 证据
+- **写在哪**：PROGRESS.md 本批次表本 Mx.y 组的回写行末尾（追加），自由文本，不算 F1 证据
 - **写什么**：可能影响的外部功能 + 可选测试命令
 - **不写也能过**：没影响或懒得写 → 跳过，不卡 ✅
 
@@ -71,7 +71,7 @@ progress 里写 ✅ 的**那一刻**，F1 触发。cycle 收点的完整 checkli
 
 cycle **只写两处**：
 1. F1 收点时在本批次表本 Mx.y 组的 RED/GREEN 行写命令 + 输出片段
-2. 塌方时写备注行
+2. 塌方或发现计划偏差时写回写行
 
 cycle **不碰状态列**（✅/⏳/⬜ 由 progress 根据 cycle 是否完成来写），也**不直接改 prd.md / spec.md**。详细规则见 progress SKILL.md。
 

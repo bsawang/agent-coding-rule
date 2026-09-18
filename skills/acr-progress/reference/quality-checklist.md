@@ -64,13 +64,14 @@
 
 | # | 检查 | 硬约束来源 | 怎么验 |
 |---|---|---|---|
-| C1 | TDD RED 真看到红 | cycle SKILL.md + coding.md | 删实现或反向改坏 → 跑测试 → 输出有 FAILED |
-| C2 | TDD GREEN 全过 | cycle SKILL.md | 恢复实现 → 测试全绿 |
+| C1 | TDD RED 真看到红 | cycle SKILL.md + coding.md | 证据列有 FAILED 输出片段 |
+| C2 | TDD GREEN 全过 | cycle SKILL.md | 证据列有 passed 输出片段 |
 | C3 | 证据列 = 命令 + 输出片段 + 轮次 | progress SKILL.md 关键约束 | `pytest xxx -v → 4 passed in 0.06s（本轮 2026-09-18）` |
-| C4 | 验收条件逐条对齐 | cycle SKILL.md 自检步骤 | spec 验收栏的每一条都被测试覆盖 |
-| C5 | 没有跨模块边界 import | coding.md §1 | grep import 看是否违反 spec §3.2 的边界约定 |
-| C6 | 没有引入未声明依赖 | coding.md §4 | imports 都在 spec §3.1 里有 |
-| C7 | 错误场景都覆盖 | coding.md §2 | spec 详细设计列出的每个错误场景都有测试 |
+| C4 | 验收条件逐条对齐 | cycle SKILL.md | spec 验收栏的每一条都被测试覆盖 |
+| C5 | 影响分析已写 | cycle SKILL.md 影响分析 | 证据列有影响列表 + 可选测试命令（没影响写"无"） |
+| C6 | 没有跨模块边界 import | coding.md §1 | grep import 看是否违反 spec §3.2 的边界约定 |
+| C7 | 没有引入未声明依赖 | coding.md §4 | imports 都在 spec §3.1 里有 |
+| C8 | 错误场景都覆盖 | coding.md §2 | spec 详细设计列出的每个错误场景都有测试 |
 
 **全勾上才能写 ✅。有一个不勾 → 不许写 ✅，回去补。**
 

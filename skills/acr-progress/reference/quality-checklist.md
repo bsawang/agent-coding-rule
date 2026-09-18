@@ -54,7 +54,7 @@
 |---|---|---|---|
 | PR1 | 依赖图拓扑序无环 | progress SKILL.md 硬规矩 | 画依赖图，不能有 A→B→A |
 | PR2 | 每个本批次内的待定项有主有期 | progress SKILL.md 硬规矩 | spec §6 待定项"何时必须定"不空 |
-| PR3 | PROGRESS.md 结构正确 | progress SKILL.md 结构硬约束 | 全览是批次索引（每行一个批次）+ 批次块 = 标题 + 一张 2 列表格（左列标签/右列内容，前两行覆盖/依赖序 + Mx.y 组竖向排）+ 永不重排 |
+| PR3 | PROGRESS.md 结构正确 | progress SKILL.md 结构硬约束 | 全览是批次索引（每行一个批次）+ 批次块 = 标题 + 表格（格式看 SKILL.md 模板示例）+ 永不重排 |
 
 **全勾上才能交给 cycle。有一个不勾 → 回去改 plan 或 spec。**
 
@@ -64,9 +64,9 @@
 
 | # | 检查 | 硬约束来源 | 怎么验 |
 |---|---|---|---|
-| C1 | TDD RED 真看到红 | cycle SKILL.md + coding.md | 本批次表本 Mx.y 组的 RED 行有 FAILED 输出片段 |
-| C2 | TDD GREEN 全过 | cycle SKILL.md | 本批次表本 Mx.y 组的 GREEN 行有 passed 输出片段 |
-| C3 | GREEN 行 = 命令 + 输出片段 + 轮次 | progress SKILL.md 关键约束 | `pytest xxx -v → 4 passed in 0.06s（本轮 2026-09-18）` |
+| C1 | TDD RED 真看到红 | cycle SKILL.md + coding.md | PROGRESS 里本子需求有 RED 的 FAILED 输出片段 |
+| C2 | TDD GREEN 全过 | cycle SKILL.md | PROGRESS 里本子需求有 GREEN 的 passed 输出片段 |
+| C3 | 输出片段 = 命令 + 结果 + 轮次 | progress SKILL.md 关键约束 | `pytest xxx -v → 4 passed in 0.06s（本轮 2026-09-18）` |
 | C4 | 验收条件逐条对齐 | cycle SKILL.md | spec 验收栏的每一条都被测试覆盖 |
 | C5 | 没有跨模块边界 import | coding.md §1 | grep import 看是否违反 spec §3.2 的边界约定 |
 | C6 | 没有引入未声明依赖 | coding.md §4 | imports 都在 spec §3.1 里有 |

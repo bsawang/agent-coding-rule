@@ -7,7 +7,7 @@ description: "实施层单一真相源。plan 已下发 / cycle 执行完要对�
 
 **落点**：`docs/PROGRESS.md`，**全项目一份**。
 
-**定位**：实施层**唯一真相源**。prd/spec 里的 🟢⬜ 是本文件状态的**镜像标记**，只有本 skill 能改 PROGRESS.md，也只有本 skill 能回写 prd/spec 的状态后缀。全局真相源体系（六层六源 + 禁止事项）见仓库根 `SSOT.md`。
+**定位**：实施层**唯一真相源**。prd/spec 里的 🟢⬜ 是本文件状态的**镜像标记**，只有本 skill 能改 PROGRESS.md，也只有本 skill 能回写 prd/spec 的状态后缀。全局真相源体系（六层六源 + 禁止事项）见 `docs/SSOT.md`。
 
 ## 生命周期
 

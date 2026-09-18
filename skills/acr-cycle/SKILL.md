@@ -7,7 +7,7 @@ description: "无状态执行。progress 接收初始态后 / PROGRESS.md 有 �
 
 **定位**：工具层，无状态。上下文全来自 PROGRESS.md，cycle 不存任何内部状态。
 
-**前置**：progress 已接收 plan 产出的初始态 + 计划侧对账已过。cycle 入口 = progress 把初始态交给 cycle。
+**前置**：progress 已接收 plan 的下发声明 + 计划侧对账已过 + PROGRESS.md 已写好。cycle 入口 = progress 把 PROGRESS.md 交给 cycle。
 
 ## 执行：子需求循环 + 游标
 
@@ -36,7 +36,7 @@ description: "无状态执行。progress 接收初始态后 / PROGRESS.md 有 �
 1. **写测试** —— 按 spec 验收标准写一条最小测试（垂直切片，一次一个 seam）
 2. **执行测试** —— 必须真跑一遍（`pytest -v tests/test_x.py::test_y` 或等价命令）
 3. **确认红** —— 测试输出必须显示 FAIL / ERROR / assertion failed，**不是 passing**
-4. **记录** —— 把**红的输出片段**（`FAILED tests/test_x.py::test_y - AssertionError...`）贴进 PROGRESS.md 本子需求的内部步骤游标
+4. **记录** —— 把**红的输出片段**（`FAILED tests/test_x.py::test_y - AssertionError...`）贴进 PROGRESS.md 本子需求的证据列（F1 对账需要 RED 片段作为 TDD 合规证明）
 
 **违反即停**：如果测试一上来就是绿的（因为前一个子需求顺带实现了），不能静默跳过。必须：
 1. **显式声明** —— 说清为什么前一个子需求让它绿了
@@ -56,17 +56,11 @@ progress 里写 ✅ 的**那一刻**，F1 触发。cycle 收点的完整 checkli
 
 ## cycle 写 PROGRESS.md 什么
 
-cycle 执行中**只读 progress 初始态，只写 progress 状态**：
+cycle **只写两处**：
+1. F1 收点时在证据列写命令 + 输出片段
+2. 塌方时写需求回写栏
 
-| 写什么 | 时机 |
-|---|---|
-| 内部步骤游标（⏳→✅ 等） | 每完成一步 |
-| 子需求状态 ✅⏳⬜ | 收点时 |
-| 证据（命令 + 原始输出） | 收点时 |
-| 需求回写（发现偏差时） | 随时 |
-| 阻塞说明 | 遇到阻塞时 |
-
-cycle **不直接改 prd.md / spec.md**——发现偏差时写 progress 的需求回写栏，progress 收尾统一同步。
+cycle **不碰状态列**（✅/⏳/⬜ 由 progress 根据 cycle 是否完成来写），也**不直接改 prd.md / spec.md**。详细规则见 progress SKILL.md。
 
 ## 假设塌方就停
 

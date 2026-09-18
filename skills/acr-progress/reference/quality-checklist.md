@@ -46,16 +46,15 @@
 
 ---
 
-## 4. progress 接收初始态（计划侧对账）
+## 4. progress 接收 plan 下发声明（计划侧对账）
+
+**plan 已经过了档位判定 + 事实预检查，spec 已经过了三步 MX 集合对账。progress 只查 spec 不覆盖的项。**
 
 | # | 检查 | 硬约束来源 | 怎么验 |
 |---|---|---|---|
-| PR1 | spec Mx 集合 = prd Mx 集合 | SSOT.md 禁止 #2 | 同 S1 |
-| PR2 | spec Mx.y 都属于 prd Mx | SSOT.md 禁止 #2 | 同 S2 |
-| PR3 | 本循环 Mx.y ⊆ spec 全集 | progress SKILL.md 硬规矩 | 同 PL4 |
-| PR4 | 每个 Mx.y 有验收 + 详细设计 | progress SKILL.md 硬规矩 | 同 S3 + 完整档 S5 |
-| PR5 | 每个待定项有主有期 | progress SKILL.md 硬规矩 | spec §6 待定项"何时必须定"不空 |
-| PR6 | PROGRESS.md 结构正确 | progress SKILL.md 结构硬约束 | 按循环分块 + 6 要素 + 无模块级行 |
+| PR1 | 依赖图拓扑序无环 | progress SKILL.md 硬规矩 | 画依赖图，不能有 A→B→A |
+| PR2 | 每个本循环内的待定项有主有期 | progress SKILL.md 硬规矩 | spec §6 待定项"何时必须定"不空 |
+| PR3 | PROGRESS.md 结构正确 | progress SKILL.md 结构硬约束 | 按循环分块 + 6 要素 + 无模块级行 + 子需求表只有状态+证据两列 |
 
 **全勾上才能交给 cycle。有一个不勾 → 回去改 plan 或 spec。**
 

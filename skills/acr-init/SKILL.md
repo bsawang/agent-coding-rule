@@ -59,17 +59,9 @@ acr 体系的入口。其他 acr-* skill 管的是**已经有项目**后的流�
 | cycle 收点 F1 | ✅ 必须有本轮新鲜证据（命令 + 原始输出在本轮对话里） |
 | progress 收尾 F2+F3 | spec 验收 ↔ progress 证据 ↔ 代码测试 三方 diff；代码结构 ↔ spec 详细设计 |
 
-## Skill 触发提示
+## Skill 路由
 
-开发流程走 acr-*:
-- 发散 + prd → acr-brainstorm
-- 技术规格 → acr-spec
-- 档位判定 + 事实预检查 + 下发 → acr-plan
-- 计划侧对账 + F2+F3 + 状态 + 游标 + 回写栏 → acr-progress
-- 执行 + F1 收点 → acr-cycle
-
-存量项目审计/整改 → acr-plan(审计模式)
-有代码无文档重建 → acr-plan(rebuild 模式)
+开发流程走 acr-*: brainstorm → spec → plan → progress → cycle。存量项目审计/整改走 acr-plan(审计模式)，有代码无文档走 acr-plan(rebuild 模式)。每个 skill 的内部职责见各自 SKILL.md，本文件不重复。
 ```
 
 **注意**：本文件只放**项目内必须看到的拦截线摘要**，完整定义以对应 skill 为真相源。全局真相源体系见 `docs/SSOT.md`。

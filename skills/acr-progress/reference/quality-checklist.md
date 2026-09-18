@@ -54,7 +54,7 @@
 |---|---|---|---|
 | PR1 | 依赖图拓扑序无环 | progress SKILL.md 硬规矩 | 画依赖图，不能有 A→B→A |
 | PR2 | 每个本批次内的待定项有主有期 | progress SKILL.md 硬规矩 | spec §6 待定项"何时必须定"不空 |
-| PR3 | PROGRESS.md 结构正确 | progress SKILL.md 结构硬约束 | 全览前置（索引+唯一真相源）+ 批次块线性追加 + 6 要素 + 子需求表只有状态+证据两列 |
+| PR3 | PROGRESS.md 结构正确 | progress SKILL.md 结构硬约束 | 全览是批次索引（每行一个批次）+ 批次块 = 一个表格（覆盖/依赖序/回写/待定都是列）+ 永不重排 |
 
 **全勾上才能交给 cycle。有一个不勾 → 回去改 plan 或 spec。**
 

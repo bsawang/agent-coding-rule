@@ -1,4 +1,4 @@
-# 质检清单
+﻿# 质检清单
 
 **谁用**：progress 收尾时逐条过（F2+F3）；cycle 收点时过本子需求的 F1；spec 写完过 spec 阶段；plan 下发前过 plan 阶段。
 
@@ -42,7 +42,7 @@
 | PL1 | 自检两问答完了 | plan SKILL.md 档位判定 | ① 要不要改 Mx.y 集合/验收？② 要不要改模块边界？ |
 | PL2 | 档位决定正确 | plan SKILL.md 档位判定表 | 快道 = Mx.y+验收都不变；标准档 = 集合或验收变/边界不变；完整档 = 架构变 |
 | PL3 | 依赖序拓扑无环 | progress SKILL.md 硬规矩 | 画依赖图，不能有 A→B→A |
-| PL4 | 本循环 Mx.y ⊆ spec 全集 | progress SKILL.md 硬规矩 | 没有 spec 没定义的 Mx.y |
+| PL4 | 本批次 Mx.y ⊆ spec 全集 | progress SKILL.md 硬规矩 | 没有 spec 没定义的 Mx.y |
 
 ---
 
@@ -53,8 +53,8 @@
 | # | 检查 | 硬约束来源 | 怎么验 |
 |---|---|---|---|
 | PR1 | 依赖图拓扑序无环 | progress SKILL.md 硬规矩 | 画依赖图，不能有 A→B→A |
-| PR2 | 每个本循环内的待定项有主有期 | progress SKILL.md 硬规矩 | spec §6 待定项"何时必须定"不空 |
-| PR3 | PROGRESS.md 结构正确 | progress SKILL.md 结构硬约束 | 按循环分块 + 6 要素 + 无模块级行 + 子需求表只有状态+证据两列 |
+| PR2 | 每个本批次内的待定项有主有期 | progress SKILL.md 硬规矩 | spec §6 待定项"何时必须定"不空 |
+| PR3 | PROGRESS.md 结构正确 | progress SKILL.md 结构硬约束 | 按批次分块 + 6 要素 + 无模块级行 + 子需求表只有状态+证据两列 |
 
 **全勾上才能交给 cycle。有一个不勾 → 回去改 plan 或 spec。**
 

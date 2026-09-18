@@ -1,4 +1,4 @@
----
+﻿---
 name: acr-cycle
 description: "无状态执行。progress 接收初始态后 / PROGRESS.md 有 ⏳ 游标待续做 / 用户说'开始写代码'时必须调我。逐 Mx.y 执行：读spec→TDD(RED必须真看红)→影响分析→收点F1。退出后回来从 ⏳ 续做。不是我：档位判定走 acr-plan，进度维护走 acr-progress，prd/spec 走 acr-brainstorm/acr-spec。"
 ---

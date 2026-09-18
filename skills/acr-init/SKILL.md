@@ -72,7 +72,7 @@ acr 体系的入口。其他 acr-* skill 管的是**已经有项目**后的流�
 有代码无文档重建 → acr-plan(rebuild 模式)
 ```
 
-**注意**：本文件只放**项目内必须看到的拦截线摘要**，完整定义以对应 skill 为真相源。整体 SSOT 体系见 [SSOT.md](../../SSOT.md)。
+**注意**：本文件只放**项目内必须看到的拦截线摘要**，完整定义以对应 skill 为真相源。全局真相源体系见仓库根 `SSOT.md`。
 
 ### 2. Agent 指引（CC 下是根目录 `CLAUDE.md`）
 
@@ -117,7 +117,7 @@ acr 体系的入口。其他 acr-* skill 管的是**已经有项目**后的流�
 
 ## 边界
 
-- **不重述 skill 完整内容**——项目级规则只放拦截线摘要，完整定义是各 skill SKILL.md 的真相源。整体 SSOT 体系见 [SSOT.md](../../SSOT.md)
+- **不重述 skill 完整内容**——项目级规则只放拦截线摘要，完整定义是各 skill SKILL.md 的真相源。全局真相源体系见仓库根 `SSOT.md`
 - **不做存量项目审计 / 文档重整**——那是 acr-plan 的审计 / rebuild 模式
 - **不写 prd/spec**——acr-brainstorm / acr-spec 管，本 skill 只管空骨架
 - **本 skill 的模板是副本，不是真相源**——改兄弟 skill 的落点时，必须回来同步本表。编号规范的真相源是 `acr-spec/reference/numbering.md`

@@ -91,7 +91,8 @@ cycle 执行中：cycle 写证据 / 写需求回写 → 实时更新批次块
 - **cycle 写 ✅ 必须有证据**（F1 内置）：验收命令的原始输出必须在**本轮对话内**
 - **F2/F3 是 progress 收尾时的硬门槛**，cycle 不自己做
 - **需求回写栏是 cycle 执行中唯一能改 prd/spec 计划的地方**——cycle 不直接改 prd/spec，先写回写栏，progress 收尾统一同步
-- **同步顺序不能反**：先落回 prd/spec → 再清空回写栏 → 最后标 progress 归档
+- **同步顺序不能反**：先落回 prd/spec → 再追加调整记录（prd §4 + spec 调整记录） → 再清空回写栏 → 最后标 progress 归档
+- **调整记录永不删除**——追加不覆盖。废弃条目物理隔离到 prd/spec 末尾「已废弃」章节（模板见 numbering.md §1）
 
 ## 边界
 

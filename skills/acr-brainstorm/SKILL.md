@@ -47,16 +47,25 @@ description: "头脑风暴 + prd 收敛。用户说'加个 X 功能' / 需求模
 ## 3. 非目标
   明确不做什么。必须写，防范围蔓延。
 
-## 4. 调整记录（新增/废弃/改范围）
-  | 日期 | 调整 | 原因 |
+## 4. 调整记录（变更轨迹，永不删除）
+  | 日期 | 类型 | 变更 | 原因 |
+  |---|---|---|---|
+  | 2026-09-18 | 废弃 | M4 导出功能 | 产品决策变更，改为 SaaS 导出 |
+  | 2026-09-20 | 新增 | M5 批量操作 | 用户反馈高频需求 |
+  类型选项：新增 / 废弃 / 改范围 / 改描述
+
+## 5. 已废弃模块（物理隔离，末尾独立章节）
+  活跃区废弃的 Mx 移到这里。模板和规则见 [acr-spec/reference/numbering.md](../acr-spec/reference/numbering.md) §1 废弃处理。
 ```
 
 ### 收敛规则
 
 - 模块 Mx 的切分粒度：一个模块 = 一个**业务价值单元**（用户视角能单独感知的功能域）
-- Mx 编号首次分配后**永不重排**，废弃标题加 🗑 —— 完整编号规范见 [acr-spec/reference/numbering.md](../acr-spec/reference/numbering.md)
+- Mx 编号首次分配后**永不重排**，废弃移到末尾「已废弃」章节 + 标题加 🗑 —— 完整编号规范见 [acr-spec/reference/numbering.md](../acr-spec/reference/numbering.md)
 - 增量修订时，只改 Mx 的功能描述，不动已有 Mx 的编号
+- **正文保持活跃态**——活跃区只留当前活跃 Mx，废弃的移到末尾章节。LLM 读活跃区时碰不到废弃条目，防漂移
 - **状态后缀生命周期**：prd 写完时所有 Mx = ⬜（未开始）。🟢⏳ 是 progress 在 cycle 执行中**回写的镜像标记**——prd 自己不许改状态后缀。单一真相源在 `docs/PROGRESS.md`，由 progress skill 独占写权限。全局真相源体系（六层六源 + 禁止事项）见 `docs/SSOT.md`。
+- **调整记录在落回后同步追加**——progress 收尾落回 prd/spec 时，prd §4 调整记录由 progress 自动追加一行，brainstorm 也可以在外部变更时追加
 
 ### prd 边界（不许越界）
 
